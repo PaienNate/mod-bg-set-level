@@ -35,10 +35,8 @@ public:
 
     void OnBattlegroundAddPlayer(Battleground* /*bg*/, Player* player) override
     {
-        LOG_ERROR("", "Added to BG");
         if (sConfigMgr->GetOption<bool>("CustomBGLevel.Enable", false))
         {
-            LOG_ERROR("", "Setting level....");
             SetToBGLevel(player);
         }
     }
