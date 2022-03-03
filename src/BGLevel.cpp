@@ -6,7 +6,7 @@
 #include "Player.h"
 #include "Config.h"
 #include "Chat.h"
-#include "UnitFields.h"
+#include "UpdateFields.h"
 
 // Add player scripts
 class PS_BGLevel : public PlayerScript
@@ -15,7 +15,6 @@ private:
     void RestoreOriginalLevel(Player* player)
     {
         ObjectGuid playerGUID = player->GetGUID();
-        sT->entryMap.erase(playerGUID);
         QueryResult result = CharacterDatabase.Query("SELECT PlayerID, original_level, original_xp FROM custom_bg_level WHERE PlayerID = {}", player->GetGUID().GetCounter());
         if (result)
         {
@@ -65,7 +64,7 @@ public:
 };
 
 // Add all scripts in one
-void AddSC_BGLevel()
+void AddSC_mod_bg_set_level()
 {
     new PS_BGLevel();
 }
