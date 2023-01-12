@@ -80,7 +80,7 @@ public:
     {
         if (sConfigMgr->GetOption<bool>("CustomBGLevel.Enable", false))
         {
-            ChatHandler(player->GetSession()).SendSysMessage("Custom BG Level is Enabled");
+            ChatHandler(player->GetSession()).SendSysMessage("自定义战场等级已启用");
             if (!player->InBattleground())
             {
                 RestoreOriginalLevel(player);
