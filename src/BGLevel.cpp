@@ -13,7 +13,6 @@ class BGS_BGLevel : public BGScript
 private:
     void RestoreOriginalLevel(Player* player)
     {
-        ObjectGuid playerGUID = player->GetGUID();
         QueryResult result = CharacterDatabase.Query("SELECT PlayerID, original_level, original_xp FROM custom_bg_level WHERE PlayerID = {}", player->GetGUID().GetCounter());
         if (result)
         {
@@ -56,7 +55,6 @@ class PS_BGLevel : public PlayerScript
 private:
     void RestoreOriginalLevel(Player* player)
     {
-        ObjectGuid playerGUID = player->GetGUID();
         QueryResult result = CharacterDatabase.Query("SELECT PlayerID, original_level, original_xp FROM custom_bg_level WHERE PlayerID = {}", player->GetGUID().GetCounter());
         if (result)
         {
