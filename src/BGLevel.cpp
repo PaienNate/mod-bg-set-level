@@ -25,7 +25,7 @@ private:
     void SetToBGLevel(Player* player)
     {
         uint32 levelToSet = sConfigMgr->GetOption<uint32>("CustomBGLevel.Level", 80);
-        CharacterDatabase.Execute("INSERT INTO custom_bg_level (PlayerID, original_level, original_xp) VALUES ({}, {}, {})", player->GetGUID().GetCounter(), player->getLevel(), player->GetUInt32Value(PLAYER_XP));
+        CharacterDatabase.Execute("INSERT INTO custom_bg_level (PlayerID, original_level, original_xp) VALUES ({}, {}, {})", player->GetGUID().GetCounter(), player->GetLevel(), player->GetUInt32Value(PLAYER_XP));
         player->SetLevel(levelToSet, true);
     }
 
@@ -67,7 +67,7 @@ private:
     void SetToBGLevel(Player* player)
     {
         uint32 levelToSet = sConfigMgr->GetOption<uint32>("CustomBGLevel.Level", 80);
-        CharacterDatabase.Execute("INSERT INTO custom_bg_level (PlayerID, original_level, original_xp) VALUES ({}, {}, {})", player->GetGUID().GetCounter(), player->getLevel(), player->GetUInt32Value(PLAYER_XP));
+        CharacterDatabase.Execute("INSERT INTO custom_bg_level (PlayerID, original_level, original_xp) VALUES ({}, {}, {})", player->GetGUID().GetCounter(), player->GetLevel(), player->GetUInt32Value(PLAYER_XP));
         player->SetLevel(levelToSet, true);
     }
 
